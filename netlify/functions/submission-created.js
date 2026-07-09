@@ -92,7 +92,10 @@ exports.handler = async (event) => {
 
     const apiKey = process.env.RESEND_API_KEY;
     const toAddress = process.env.NOTIFY_TO || "parallaxlabs.tech@gmail.com";
-    const fromAddress = process.env.NOTIFY_FROM || "Parallax Labs <notifications@parallaxlabs.tech>";
+    // Resend rejects sends from unverified domains. Until a domain is verified
+    // in the Resend dashboard, its sandbox address works with zero setup.
+    // Once verified, set NOTIFY_FROM to e.g. "Parallax Labs <notifications@parallaxlabs.tech>".
+    const fromAddress = process.env.NOTIFY_FROM || "Parallax Labs <onboarding@resend.dev>";
 
     if (!apiKey) {
       console.error("RESEND_API_KEY is not set — skipping branded email send.");
