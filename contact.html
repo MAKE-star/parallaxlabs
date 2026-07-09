@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a Project — Parallax Labs</title>
+<meta name="description" content="Request a project from Parallax Labs — fintech, marketplace, and data engineering.">
+<meta property="og:title" content="Start a Project — Parallax Labs">
+<meta property="og:description" content="Tell Parallax Labs what you're building — fintech, marketplace, or data infrastructure.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#12141c">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span></span><span></span></span>
+      Parallax Labs
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Work</a>
+      <a href="contact.html" class="btn btn-primary current">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <p class="eyebrow">Start a project</p>
+    <h1>Bring us the <em>problem</em></h1>
+    <p class="lede">Tell us what you're building. We'll come back with how Parallax Labs would approach the engineering and the data side of it.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <div class="hero-grid" style="align-items:flex-start;">
+
+      <div>
+        <div class="form-success">Thanks — your project request is in. We'll reply within 1–2 business days.</div>
+
+        <form id="project-form" name="project-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="project-request">
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="field">
+              <label for="company">Company / project name</label>
+              <input type="text" id="company" name="company">
+            </div>
+            <div class="field">
+              <label for="type">Project type</label>
+              <select id="type" name="type">
+                <option>Fintech / payments</option>
+                <option>Marketplace / platform</option>
+                <option>Data & analytics</option>
+                <option>Web3 / blockchain</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="budget">Budget range</label>
+              <select id="budget" name="budget">
+                <option>Under $2,000</option>
+                <option>$2,000 – $5,000</option>
+                <option>$5,000 – $15,000</option>
+                <option>$15,000+</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="message">Tell us about the project</label>
+              <textarea id="message" name="message" required placeholder="What are you building, and what does it need to do?"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send project request →</button>
+          <p class="form-note">This form is wired for Netlify Forms — once deployed on Netlify it will collect submissions automatically, no backend required.</p>
+        </form>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:6px;">Or reach us directly</h3>
+        <p style="margin-bottom:0;">Prefer email or a quick LinkedIn message? Any of these work.</p>
+        <div class="contact-list">
+          <div class="contact-row">
+            <span class="label">Email</span>
+            <a href="mailto:parallaxlabs.tech@gmail.com">parallaxlabs.tech@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">Mayopo — GitHub</span>
+            <a href="https://github.com/MAKE-star" target="_blank" rel="noopener">github.com/MAKE-star ↗</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">Mayopo — LinkedIn</span>
+            <a href="https://www.linkedin.com/in/mayopo-adeoye" target="_blank" rel="noopener">linkedin.com/in/mayopo-adeoye ↗</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">Adekanle — LinkedIn</span>
+            <a href="https://www.linkedin.com/in/adekanle/" target="_blank" rel="noopener">linkedin.com/in/adekanle ↗</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">Based in</span>
+            <p>Lagos, Nigeria</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <a href="index.html" class="brand"><span class="brand-mark"><span></span><span></span></span>Parallax Labs</a>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <a href="about.html">About</a>
+          <a href="projects.html">Work</a>
+          <a href="contact.html">Start a project</a>
+        </div>
+        <div class="footer-col">
+          <h4>Founders</h4>
+          <a href="https://www.linkedin.com/in/mayopo-adeoye" target="_blank" rel="noopener">Mayopo Adeoye</a>
+          <a href="https://www.linkedin.com/in/adekanle/" target="_blank" rel="noopener">Adekanle V. Richards</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:parallaxlabs.tech@gmail.com">parallaxlabs.tech@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Parallax Labs · Lagos, Nigeria</span>
+      <span>Two lenses. One system.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="g1" cx="15%" cy="10%" r="60%">
+      <stop offset="0%" stop-color="#4c8dff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#4c8dff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="90%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#f5a623" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#f5a623" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#12141c"/>
+  <rect width="1200" height="630" fill="url(#g1)"/>
+  <rect width="1200" height="630" fill="url(#g2)"/>
+
+  <circle cx="905" cy="300" r="150" fill="none" stroke="#4c8dff" stroke-opacity="0.4" stroke-width="1.5"/>
+  <circle cx="965" cy="330" r="150" fill="none" stroke="#f5a623" stroke-opacity="0.4" stroke-width="1.5"/>
+
+  <text x="90" y="270" font-family="Space Grotesk, sans-serif" font-size="72" font-weight="700" fill="#eceef5">Parallax Labs</text>
+  <text x="90" y="330" font-family="Space Grotesk, sans-serif" font-size="40" font-weight="600" fill="#8b93a7">Two lenses. One system.</text>
+  <text x="90" y="390" font-family="IBM Plex Mono, monospace" font-size="20" letter-spacing="2" fill="#4c8dff">ENGINEERING</text>
+  <text x="260" y="390" font-family="IBM Plex Mono, monospace" font-size="20" fill="#8b93a7">×</text>
+  <text x="290" y="390" font-family="IBM Plex Mono, monospace" font-size="20" letter-spacing="2" fill="#f5a623">DATA</text>
+</svg>
