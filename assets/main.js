@@ -52,23 +52,74 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  /* project request form -> Netlify Forms via AJAX, inline success state */
+  /* project request form -> Netlify Forms via AJAX, modal shows progress + confirmation */
   const form = document.querySelector('#project-form');
+  const modalOverlay = document.querySelector('#request-modal');
+
+  function setModalState(state) {
+    if (!modalOverlay) return;
+    modalOverlay.querySelectorAll('.modal-state').forEach((el) => {
+      const isActive = el.dataset.state === state;
+      el.hidden = !isActive;
+      // restart CSS animations (spinner/checkmark) each time a state is shown
+      if (isActive) {
+        el.querySelectorAll('*').forEach((child) => {
+          child.style.animation = 'none';
+          // eslint-disable-next-line no-unused-expressions
+          child.offsetHeight; // force reflow
+          child.style.animation = '';
+        });
+      }
+    });
+  }
+
+  function openModal(state) {
+    if (!modalOverlay) return;
+    setModalState(state);
+    modalOverlay.classList.add('is-open');
+    modalOverlay.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeModal() {
+    if (!modalOverlay) return;
+    modalOverlay.classList.remove('is-open');
+    modalOverlay.setAttribute('aria-hidden', 'true');
+  }
+
+  if (modalOverlay) {
+    modalOverlay.querySelectorAll('.modal-close').forEach((btn) => {
+      btn.addEventListener('click', closeModal);
+    });
+    // clicking the dimmed backdrop closes it, but only once the request has settled
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay && !modalOverlay.querySelector('[data-state="loading"]:not([hidden])')) {
+        closeModal();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('is-open') &&
+          !modalOverlay.querySelector('[data-state="loading"]:not([hidden])')) {
+        closeModal();
+      }
+    });
+  }
+
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const data = new FormData(form);
-      fetch('/', {
+      openModal('loading');
+      fetch('/contact.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(data).toString(),
       })
         .then(() => {
-          form.style.display = 'none';
-          document.querySelector('.form-success').style.display = 'block';
+          setModalState('success');
+          form.reset();
         })
         .catch(() => {
-          alert("Something didn't send. Please email parallaxlabs.tech@gmail.com directly.");
+          setModalState('error');
         });
     });
   }
